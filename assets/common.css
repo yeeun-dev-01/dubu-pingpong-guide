@@ -1,0 +1,137 @@
+/* 두부핑퐁 고객 안내 자료 공통 스타일
+   색상·글꼴은 dubuhomes.com/guide 페이지 값을 그대로 썼어요. */
+
+@font-face { font-family: "Pretendard"; font-weight: 400; src: url("fonts/Pretendard-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 600; src: url("fonts/Pretendard-SemiBold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 700; src: url("fonts/Pretendard-Bold.woff2") format("woff2"); }
+@font-face { font-family: "Pretendard"; font-weight: 800; src: url("fonts/Pretendard-ExtraBold.woff2") format("woff2"); }
+
+:root {
+  --bg: #ffffff;
+  --ink: #101828;
+  --sub: #475467;
+  --muted: #667085;
+  --line: #eaecf0;
+  --gray: #f2f4f7;
+  --tint: #f4f9ff;
+  --blue: #1e8fff;
+  --blue-deep: #0b6bcb;
+  --blue-soft: #e6f2ff;
+  --red: #f04438;
+  --f: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+/* 스마트폰 세로 화면 비율의 PDF 페이지 */
+@page { size: 390px 844px; margin: 30px 0 34px; }
+@page :first { margin-top: 0; }
+
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f);
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+.doc { max-width: 390px; margin: 0 auto; padding: 0 22px 8px; }
+p { margin: 0; }
+b, strong { font-weight: 700; }
+a { color: var(--blue-deep); text-decoration: none; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* 머리말 */
+.top { padding: 30px 0 22px; border-bottom: 1px solid var(--line); margin-bottom: 26px; }
+.top .logo { height: 20px; display: block; margin-bottom: 22px; }
+.top .no { font-size: 13px; font-weight: 700; color: var(--blue); margin-bottom: 4px; }
+.top h1 { margin: 0; font-size: 26px; line-height: 1.35; font-weight: 800; letter-spacing: -0.02em; }
+.top .summary { margin-top: 8px; font-size: 14px; color: var(--muted); }
+
+/* 섹션 */
+section { margin-bottom: 30px; }
+section > h2 { margin: 0 0 12px; font-size: 19px; line-height: 1.4; font-weight: 800; letter-spacing: -0.02em; break-after: avoid; }
+.lede { color: var(--sub); font-size: 14.5px; margin-bottom: 14px; }
+.small { font-size: 13px; color: var(--muted); }
+
+/* 카드 */
+.card { border: 1px solid var(--line); border-radius: 16px; padding: 18px; break-inside: avoid; }
+.card + .card { margin-top: 12px; }
+.card.tint { background: var(--tint); border-color: #d6e9ff; }
+.card.gray { background: var(--gray); border-color: var(--gray); }
+.card h3 { margin: 0 0 6px; font-size: 16px; font-weight: 800; line-height: 1.4; }
+.card p { color: var(--sub); font-size: 14.5px; }
+.badge { display: inline-block; font-size: 12px; font-weight: 700; color: var(--blue-deep); background: var(--blue-soft); padding: 2px 9px; border-radius: 999px; vertical-align: 2px; margin-left: 4px; }
+.badge.gray { color: var(--sub); background: var(--gray); }
+
+/* 핵심 숫자 3칸 */
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 16px; break-inside: avoid; }
+.facts.two { grid-template-columns: repeat(2, 1fr); }
+.facts > div { padding: 14px 6px; text-align: center; }
+.facts > div + div { border-left: 1px solid var(--line); }
+.facts b { display: block; font-size: 19px; font-weight: 800; line-height: 1.3; }
+.facts span { font-size: 12.5px; color: var(--muted); }
+
+/* 이용권 카드 */
+.passes { border: 1px solid var(--line); border-radius: 16px; overflow: hidden; break-inside: avoid; }
+.pass { padding: 16px 18px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; align-items: end; }
+.pass + .pass { border-top: 1px solid var(--line); }
+.pass.best { background: var(--tint); }
+.pass .name { font-size: 16px; font-weight: 700; }
+.pass .name .badge { margin-left: 6px; }
+.pass .meta { font-size: 13px; color: var(--muted); }
+.pass .price { text-align: right; }
+.pass .rate { font-size: 15px; font-weight: 800; color: var(--red); margin-right: 4px; }
+.pass .big { font-size: 21px; font-weight: 800; line-height: 1.3; }
+.pass.best .big { color: var(--blue); }
+.pass .unit { display: block; font-size: 13px; color: var(--muted); }
+
+/* 표 */
+table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 13.5px; break-inside: avoid; }
+th, td { text-align: left; padding: 10px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th { font-size: 12.5px; font-weight: 700; color: var(--muted); }
+td { color: var(--sub); font-variant-numeric: tabular-nums; }
+td:first-child, th[scope="row"] { color: var(--ink); font-weight: 700; }
+td.hl, th.hl { color: var(--blue-deep); font-weight: 700; }
+.table-wrap { border: 1px solid var(--line); border-radius: 16px; padding: 4px 12px; break-inside: avoid; }
+.table-wrap tr:last-child td, .table-wrap tr:last-child th { border-bottom: 0; }
+
+/* 목록 */
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { position: relative; padding: 11px 0 11px 18px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--sub); break-inside: avoid; }
+.list li:last-child { border-bottom: 1px solid var(--line); }
+.list li::before { content: ""; position: absolute; left: 3px; top: 21px; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+.list li b { color: var(--ink); }
+
+/* 정의 목록 (항목 - 설명) */
+.rows { border-top: 1px solid var(--line); }
+.rows > div { display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 10px; padding: 12px 0; border-bottom: 1px solid var(--line); break-inside: avoid; }
+.rows dt, .rows .k { font-size: 14px; font-weight: 700; color: var(--ink); }
+.rows dd, .rows .v { margin: 0; font-size: 14.5px; color: var(--sub); }
+.rows .v b { color: var(--ink); }
+
+/* 알림 상자 */
+.note { border-radius: 14px; background: var(--gray); padding: 14px 16px; font-size: 13.5px; color: var(--sub); break-inside: avoid; }
+.note b { color: var(--ink); }
+.note.blue { background: var(--tint); }
+
+/* 버튼 모양 링크 */
+.btn { display: block; text-align: center; border-radius: 999px; background: var(--blue); color: #fff; font-weight: 800; font-size: 15.5px; padding: 14px; break-inside: avoid; }
+.btn.line { background: #fff; color: var(--blue-deep); border: 1.5px solid var(--blue); }
+.url { display: block; text-align: center; font-size: 12px; color: var(--muted); margin-top: 6px; word-break: break-all; }
+
+/* 맺음말 */
+.foot { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); line-height: 1.7; break-inside: avoid; }
+
+.page-break { break-before: page; }
+.keep { break-inside: avoid; }
+.mt8 { margin-top: 8px; } .mt12 { margin-top: 12px; } .mt16 { margin-top: 16px; }
+
+/* 화면에서 볼 때 (브라우저로 HTML을 열었을 때) */
+@media screen {
+  body { background: #f2f4f7; }
+  .doc { background: #fff; min-height: 100vh; }
+}
