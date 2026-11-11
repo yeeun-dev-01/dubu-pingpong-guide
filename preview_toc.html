@@ -172,6 +172,13 @@
 
 #dubu-all .dg-fab{position:fixed;right:16px;bottom:20px;z-index:50;display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;background:var(--blue);color:#fff;font-size:12.5px;font-weight:800;line-height:1.2;text-align:center;box-shadow:0 4px 14px rgba(16,24,40,.18);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .2s,visibility .2s}
 #dubu-all .dg-fab.dg-show{opacity:1;visibility:visible;transform:none}
+#dubu-all #schedule .dg-chg{border:1px solid var(--line);border-radius:16px;overflow:hidden;break-inside:avoid}
+#dubu-all #schedule .dg-chg+.dg-chg{margin-top:12px}
+#dubu-all #schedule .dg-chg-h{padding:12px 16px;background:var(--gray);font-size:15px;font-weight:800;color:var(--ink)}
+#dubu-all #schedule .dg-chg ul{margin:0;padding:12px 16px 12px 34px;list-style:disc}
+#dubu-all #schedule .dg-chg li{font-size:14px;color:var(--sub);line-height:1.6}
+#dubu-all #schedule .dg-chg li+li{margin-top:6px}
+#dubu-all #schedule .dg-chg li b{color:var(--ink)}
 </style>
 <div id="dubu-all"><main class="dg-doc">
   <a class="dg-fab" href="#toc" aria-label="목차로 이동">↑<br>목차</a>
@@ -283,16 +290,31 @@
   </section>
   <section>
     <h2>예약 및 일정 변경</h2>
-    <p class="dg-lede">수업 예약과 일정 변경은 양육자홈에서 직접 하실 수 있어요.</p>
-    <ul class="dg-list">
-      <li><b>수업 전날 자정까지</b> 일정을 바꿀 수 있어요.</li>
-      <li>일정 변경은 <b>한 달에 최대 10회</b>까지 가능해요.</li>
-      <li>매주 듣는 <b>고정 요일과 시간</b>도 양육자홈에서 바꿀 수 있어요.</li>
-      <li>AI 친구의 <b>반응 속도</b>도 양육자홈에서 아이에게 맞게 조절할 수 있어요.</li>
-    </ul>
-    <div class="dg-note dg-mt12">
-      <b>당일 취소하거나 수업에 접속하지 않으면</b> 그 회기는 사용한 것으로 차감돼요.
+    <p class="dg-lede">정규 이용권은 양육자홈에서 두 가지 방법으로 일정을 바꿀 수 있어요.</p>
+
+    <div class="dg-chg">
+      <div class="dg-chg-h">이 수업만 취소</div>
+      <ul>
+        <li>내일 이후 수업을 한 번 쉬고 뒤로 미룰 수 있어요. <b>회차는 차감되지 않고</b>, 이후 일정이 한 회씩 뒤로 밀려요.</li>
+        <li><b>수업 전날 23:59까지</b> 신청해 주세요.</li>
+        <li>한 주(월~일)에 <b>최대 10회</b>까지 가능하고, 매주 월요일에 초기화돼요.</li>
+      </ul>
     </div>
+    <div class="dg-chg">
+      <div class="dg-chg-h">고정 시간표 변경</div>
+      <ul>
+        <li>매주 듣는 <b>요일과 시간</b>을 바꿀 수 있어요.</li>
+        <li>한 주에 <b>최대 10회</b>까지 가능하고, 매주 월요일에 초기화돼요.</li>
+        <li>변경한 다음 날은 수업이 없고, <b>새 시간표는 모레부터</b> 적용돼요.</li>
+      </ul>
+    </div>
+
+    <div class="dg-note dg-mt12">
+      <b>당일 수업은 날짜를 미룰 수 없어요.</b> 당일에 수업을 취소하거나 수업에 접속하지 않으면 1회 차감돼요.
+    </div>
+
+    <p class="dg-small dg-mt12">양육자홈에서는 AI 친구의 반응 속도도 아이에게 맞게 조절할 수 있어요.</p>
+
     <a class="dg-btn dg-mt16" href="https://ppisch.dubuhealth.in/app/login" target="_blank" rel="noopener">양육자홈 바로가기</a>
     <a class="dg-url" href="https://ppisch.dubuhealth.in/app/login" target="_blank" rel="noopener">https://ppisch.dubuhealth.in/app/login</a>
   </section>
@@ -471,7 +493,7 @@
         <p>친구가 하는 이야기에 맞장구치며 반응하고, 대화가 이어지도록 연습해요.</p>
       </div>
     </div>
-    <p class="dg-small dg-mt12">아이의 반응에 따라 수업 순서는 일부 달라질 수 있어요.</p>
+    <p class="dg-small dg-mt12">수업은 커리큘럼 순서대로 진행돼요. 회기를 앞당기거나 반복하는 변경은 할 수 없어요.</p>
   </section>
   </div>
   <div class="dg-part" id="tiki">
@@ -560,7 +582,7 @@
         <p>친구가 갑자기 화를 낼 때, 다른 사정이 있을 수 있음을 이해하고 차분히 내 상황을 말하며 친구 마음을 헤아려요.</p>
       </div>
     </div>
-    <p class="dg-small dg-mt12">아이의 반응에 따라 수업 순서는 일부 달라질 수 있어요.</p>
+    <p class="dg-small dg-mt12">수업은 커리큘럼 순서대로 진행돼요. 회기를 앞당기거나 반복하는 변경은 할 수 없어요.</p>
   </section>
   </div>
   <div class="dg-part" id="refund">
